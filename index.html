@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexo Digital | Diseño Web para Negocios y Pymes</title>
+<meta name="description" content="Diseño y desarrollo web para negocios, emprendedores y pymes. Landing pages, sitios corporativos, SEO e integración con WhatsApp">
+<meta name="keywords" content="agencia digital, diseño web premium, desarrollo web, landing pages, tiendas online, SEO local, sitios corporativos">
+<meta name="author" content="Nexo Digital">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nexo Digital — Sitios web que convierten visitantes en clientes">
+<meta property="og:description"
+content="Diseño y desarrollo web para negocios, emprendedores y pymes. Sitios modernos, rápidos y optimizados para atraer más clientes.">
+<meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='1200' height='630' fill='%23060B18'/%3E%3Ctext x='600' y='330' font-size='120' fill='%232F6BFF' text-anchor='middle' font-family='sans-serif' font-weight='700'%3ENEXO%3C/text%3E%3C/svg%3E">
+<meta property="og:locale" content="es_LA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+content="Nexo Digital | Diseño Web para Negocios y Pymes">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23060B18'/%3E%3Cpath d='M18 46V18h5.2l17.6 21.2V18H46v28h-5.2L23.2 24.8V46Z' fill='%232F6BFF'/%3E%3C/svg%3E">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --bg-deep:#060B18;
+    --bg-panel:#0A1128;
+    --bg-panel-2:#0E1836;
+    --blue-electric:#2F6BFF;
+    --blue-glow:#5CA8FF;
+    --cyan-accent:#6EE7F9;
+    --ink:#F3F6FF;
+    --ink-muted:#A7B0D8;
+    --ink-faint:#6B75A3;
+    --glass-border:rgba(255,255,255,0.08);
+    --glass-bg:rgba(255,255,255,0.035);
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --ease:cubic-bezier(.16,.84,.44,1);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-deep);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+    line-height:1.5;
+  }
+  ::selection{background:var(--blue-electric);color:#fff;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
+  }
+
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  :focus-visible{outline:2px solid var(--blue-glow);outline-offset:3px;border-radius:4px;}
+
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px;}
+  section{position:relative;}
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--blue-glow);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:7px;height:7px;border-radius:50%;
+    background:var(--blue-glow);
+    box-shadow:0 0 10px 2px var(--blue-glow);
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:16px 32px;
+    border-radius:100px;
+    font-weight:600;
+    font-size:15px;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--blue-electric),#1a4fd6);
+    color:#fff;
+    box-shadow:0 8px 30px -8px rgba(47,107,255,.6);
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px -8px rgba(47,107,255,.8);}
+  .btn-ghost{
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    color:var(--ink);
+    backdrop-filter:blur(12px);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.07);transform:translateY(-3px);}
+  .btn-block{width:100%;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 0;
+    transition:background .4s,border-color .4s,padding .4s;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(6,11,24,0.75);
+    backdrop-filter:blur(16px) saturate(150%);
+    border-bottom:1px solid var(--glass-border);
+    padding:14px 0;
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;}
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;font-size:20px;letter-spacing:-0.01em;
+  }
+  .logo-mark{
+    width:34px;height:34px;border-radius:9px;
+    background:linear-gradient(135deg,var(--blue-electric),var(--cyan-accent));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk';font-weight:700;color:#04081a;font-size:16px;
+    box-shadow:0 4px 18px -4px rgba(47,107,255,.7);
+  }
+  .nav-links{display:flex;align-items:center;gap:36px;}
+  .nav-links a{
+    font-size:14.5px;font-weight:500;color:var(--ink-muted);
+    transition:color .25s;position:relative;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .burger{display:none;width:24px;height:18px;position:relative;}
+  .burger span{position:absolute;left:0;right:0;height:2px;background:var(--ink);border-radius:2px;transition:.3s;}
+  .burger span:nth-child(1){top:0;}
+  .burger span:nth-child(2){top:8px;}
+  .burger span:nth-child(3){top:16px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    padding:140px 0 100px;
+    position:relative;
+  }
+  #nexus-canvas{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    opacity:.6;
+    mask-image:radial-gradient(ellipse at 50% 30%, black 0%, transparent 75%);
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 0%, rgba(47,107,255,.20), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 90% 30%, rgba(110,231,249,.10), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:60px;align-items:center;
+    position:relative;z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,5vw,4.1rem);
+    line-height:1.05;
+    margin-bottom:26px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--blue-glow),var(--cyan-accent));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    font-size:18px;color:var(--ink-muted);max-width:480px;margin-bottom:40px;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+  .hero-meta{display:flex;gap:32px;flex-wrap:wrap;}
+  .hero-meta div{font-size:13px;color:var(--ink-faint);}
+  .hero-meta strong{display:block;font-family:'Space Grotesk';font-size:22px;color:var(--ink);font-weight:600;}
+
+  /* hero mockup */
+  .hero-visual{position:relative;}
+  .browser-card{
+    background:linear-gradient(180deg,var(--bg-panel-2),var(--bg-panel));
+    border:1px solid var(--glass-border);
+    border-radius:var(--radius-lg);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.02);
+    overflow:hidden;
+    transform:perspective(1400px) rotateY(-8deg) rotateX(3deg);
+    animation:floatCard 7s ease-in-out infinite;
+  }
+  @keyframes floatCard{0%,100%{transform:perspective(1400px) rotateY(-8deg) rotateX(3deg) translateY(0);}50%{transform:perspective(1400px) rotateY(-6deg) rotateX(2deg) translateY(-14px);}}
+  .browser-bar{
+    display:flex;align-items:center;gap:8px;
+    padding:14px 18px;border-bottom:1px solid var(--glass-border);
+  }
+  .browser-bar span{width:9px;height:9px;border-radius:50%;background:#3a4470;}
+  .browser-body{padding:26px;}
+  .fake-chart{
+    height:150px;display:flex;align-items:flex-end;gap:8px;margin-bottom:18px;
+  }
+  .fake-chart i{
+    flex:1;border-radius:6px 6px 0 0;
+    background:linear-gradient(180deg,var(--blue-glow),var(--blue-electric));
+    opacity:.85;
+    animation:barGrow 2.4s var(--ease) infinite alternate;
+  }
+  @keyframes barGrow{from{transform:scaleY(.6);}to{transform:scaleY(1);}}
+  .fake-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid var(--glass-border);font-size:13px;color:var(--ink-muted);}
+  .fake-row strong{color:var(--ink);font-family:'IBM Plex Mono';font-weight:500;}
+  .badge-float{
+    position:absolute;padding:12px 18px;border-radius:14px;
+    background:var(--glass-bg);border:1px solid var(--glass-border);
+    backdrop-filter:blur(14px);
+    font-size:13px;font-weight:600;
+    display:flex;align-items:center;gap:8px;
+    animation:bob 5s ease-in-out infinite;
+  }
+  .badge-float.b1{top:-6%;right:-8%;animation-delay:.3s;}
+  .badge-float.b2{bottom:8%;left:-10%;animation-delay:1s;}
+  .badge-float .dot{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 8px #4ADE80;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+  /* ---------- REVEAL ---------- */
+  [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  [data-reveal].is-visible{opacity:1;transform:translateY(0);}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-head{max-width:640px;margin-bottom:64px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:16px;}
+  .section-head p{color:var(--ink-muted);font-size:16.5px;}
+  section .wrap{padding-top:120px;padding-bottom:0;}
+  section:last-of-type .wrap{padding-bottom:120px;}
+
+  /* ---------- LOGOS / TRUST ---------- */
+  .trust{padding:56px 0;border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);}
+  .trust .wrap{padding:0 32px;}
+  .trust-label{text-align:center;font-size:13px;color:var(--ink-faint);font-family:'IBM Plex Mono';letter-spacing:.08em;text-transform:uppercase;margin-bottom:34px;}
+  .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);}
+  .marquee-track{display:flex;gap:64px;width:max-content;animation:scroll 28s linear infinite;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .trust-item{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:600;color:var(--ink-faint);font-size:15px;white-space:nowrap;}
+  .trust-item svg{width:20px;height:20px;flex-shrink:0;}
+
+  /* ---------- STATS ---------- */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--glass-border);border:1px solid var(--glass-border);border-radius:var(--radius-lg);overflow:hidden;}
+  .stat-card{background:var(--bg-panel);padding:44px 28px;text-align:center;}
+  .stat-num{font-family:'Space Grotesk';font-weight:700;font-size:clamp(2.2rem,4vw,3rem);color:var(--ink);}
+  .stat-num span{color:var(--blue-glow);}
+  .stat-label{margin-top:10px;font-size:13.5px;color:var(--ink-muted);font-family:'IBM Plex Mono';}
+
+  /* ---------- BENEFITS ---------- */
+  .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .benefit-card{
+    background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);
+    padding:32px;transition:transform .35s var(--ease),border-color .35s,background .35s;
+  }
+  .benefit-card:hover{transform:translateY(-6px);border-color:rgba(92,168,255,.4);background:rgba(47,107,255,.06);}
+  .benefit-icon{
+    width:46px;height:46px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(47,107,255,.25),rgba(110,231,249,.12));
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+    border:1px solid rgba(92,168,255,.25);
+  }
+  .benefit-card h3{font-size:19px;margin-bottom:10px;}
+  .benefit-card p{color:var(--ink-muted);font-size:14.5px;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{
+    background:linear-gradient(160deg,var(--bg-panel-2),var(--bg-panel));
+    border:1px solid var(--glass-border);border-radius:var(--radius-md);
+    padding:36px 30px;position:relative;overflow:hidden;
+    transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  }
+  .service-card::after{
+    content:'';position:absolute;inset:-40% -40% auto auto;width:220px;height:220px;
+    background:radial-gradient(circle,rgba(47,107,255,.18),transparent 70%);
+    opacity:0;transition:opacity .4s;
+  }
+  .service-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -20px rgba(0,0,0,.6);}
+  .service-card:hover::after{opacity:1;}
+  .service-num{font-family:'IBM Plex Mono';font-size:13px;color:var(--blue-glow);margin-bottom:22px;display:block;}
+  .service-card h3{font-size:21px;margin-bottom:12px;}
+  .service-card p{color:var(--ink-muted);font-size:14.5px;margin-bottom:20px;}
+  .service-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .service-tags span{
+    font-size:11.5px;font-family:'IBM Plex Mono';padding:5px 10px;border-radius:6px;
+    background:rgba(255,255,255,.04);color:var(--ink-faint);border:1px solid var(--glass-border);
+  }
+
+  /* ---------- PORTFOLIO ---------- */
+  .case-list{display:flex;flex-direction:column;gap:28px;}
+  .case-card{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    background:var(--bg-panel);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+    overflow:hidden;transition:border-color .4s,transform .4s var(--ease);
+  }
+  .case-card:hover{border-color:rgba(92,168,255,.35);transform:translateY(-4px);}
+  .case-card:nth-child(even){grid-template-columns:1fr 1fr;}
+  .case-card:nth-child(even) .case-media{order:2;}
+  .case-media{
+    position:relative;min-height:340px;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .case-media .frame{
+    width:82%;aspect-ratio:16/11;border-radius:14px;
+    display:flex;flex-direction:column;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
+    border:1px solid rgba(255,255,255,.08);
+    transition:transform .5s var(--ease);
+  }
+  .case-card:hover .frame{transform:scale(1.03) translateY(-4px);}
+  .frame-bar{height:26px;display:flex;align-items:center;gap:5px;padding:0 10px;background:rgba(0,0,0,.25);}
+  .frame-bar span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);}
+  .frame-body{flex:1;padding:18px;display:flex;flex-direction:column;justify-content:center;gap:10px;}
+
+  .case-blade .case-media{background:radial-gradient(circle at 30% 20%, #2a2a2a, #0d0d0d 70%);}
+  .case-blade .frame{background:linear-gradient(160deg,#1c1c1c,#0a0a0a);}
+  .case-blade .frame-body .fbar{background:linear-gradient(90deg,#c9a34a,#7a5c1e);height:8px;border-radius:4px;width:70%;}
+  .case-blade .frame-body .fbar.s{width:40%;}
+  .case-blade .frame-body .fbar.gold{background:linear-gradient(90deg,#d4af37,#8a6d1f);height:22px;width:50%;border-radius:6px;}
+
+  .case-sonrisa .case-media{background:radial-gradient(circle at 70% 20%, #dff1ff, #eaf6ff 70%);}
+  .case-sonrisa .frame{background:linear-gradient(160deg,#ffffff,#e7f2ff);}
+  .case-sonrisa .frame-body .fbar{background:linear-gradient(90deg,#2f6bff,#63a4ff);height:8px;border-radius:4px;width:65%;}
+  .case-sonrisa .frame-body .fbar.s{width:35%;background:linear-gradient(90deg,#94c1ff,#c7e0ff);}
+  .case-sonrisa .frame-body .fbar.gold{background:#2f6bff;height:22px;width:45%;border-radius:6px;}
+
+  .case-terra .case-media{background:radial-gradient(circle at 30% 70%, #171310, #0a0806 70%);}
+  .case-terra .frame{background:linear-gradient(160deg,#181410,#0a0806);}
+  .case-terra .frame-body .fbar{background:linear-gradient(90deg,#d4af37,#f1d98a);height:8px;border-radius:4px;width:60%;}
+  .case-terra .frame-body .fbar.s{width:38%;background:linear-gradient(90deg,#6b5a2b,#3a2f14);}
+  .case-terra .frame-body .fbar.gold{background:linear-gradient(90deg,#f1d98a,#d4af37);height:22px;width:48%;border-radius:6px;}
+
+  .case-content{padding:48px 44px;display:flex;flex-direction:column;justify-content:center;}
+  .case-category{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--blue-glow);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+  .case-content h3{font-size:28px;margin-bottom:14px;}
+  .case-content p{color:var(--ink-muted);font-size:15px;margin-bottom:22px;}
+  .case-tech{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+  .case-tech span{font-size:12px;font-family:'IBM Plex Mono';padding:5px 11px;border-radius:100px;border:1px solid var(--glass-border);color:var(--ink-muted);}
+  .case-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:var(--ink);width:fit-content;padding:13px 24px;border-radius:100px;background:var(--glass-bg);border:1px solid var(--glass-border);transition:.3s;}
+  .case-link:hover{background:var(--blue-electric);border-color:var(--blue-electric);gap:12px;}
+
+  /* ---------- PROCESO ---------- */
+  .process-line{position:relative;}
+  .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative;}
+  .process-steps::before{
+    content:'';position:absolute;top:26px;left:10%;right:10%;height:1px;
+    background:linear-gradient(90deg,transparent,var(--glass-border) 15%,var(--glass-border) 85%,transparent);
+  }
+  .process-step{text-align:left;position:relative;}
+  .process-num{
+    width:52px;height:52px;border-radius:50%;
+    background:var(--bg-panel);border:1px solid var(--glass-border);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk';font-weight:700;color:var(--blue-glow);font-size:18px;
+    margin-bottom:22px;position:relative;z-index:2;
+  }
+  .process-step h4{font-size:17px;margin-bottom:8px;}
+  .process-step p{font-size:13.5px;color:var(--ink-muted);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;align-items:center;}
+  .about-copy p{color:var(--ink-muted);font-size:16px;margin-bottom:20px;}
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .pillar{padding:24px;border:1px solid var(--glass-border);border-radius:var(--radius-md);background:var(--glass-bg);}
+  .pillar h4{font-size:16px;margin-bottom:8px;}
+  .pillar p{font-size:13.5px;color:var(--ink-muted);}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{
+    background:var(--bg-panel);border:1px solid var(--glass-border);border-radius:var(--radius-md);
+    padding:32px;display:flex;flex-direction:column;gap:20px;
+  }
+  .testi-stars{color:var(--blue-glow);font-size:14px;letter-spacing:2px;}
+  .testi-card p.quote{font-size:15px;color:var(--ink);line-height:1.65;}
+  .testi-person{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .testi-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue-electric),var(--cyan-accent));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;color:#04081a;font-size:15px;}
+  .testi-person div span{display:block;}
+  .testi-person .name{font-weight:600;font-size:14px;}
+  .testi-person .role{font-size:12.5px;color:var(--ink-faint);}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:820px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--glass-border);}
+  .faq-q{
+    width:100%;display:flex;align-items:center;justify-content:space-between;
+    padding:26px 4px;text-align:left;font-family:'Space Grotesk';font-size:17px;font-weight:500;color:var(--ink);
+  }
+  .faq-q .plus{width:22px;height:22px;position:relative;flex-shrink:0;margin-left:20px;}
+  .faq-q .plus::before,.faq-q .plus::after{content:'';position:absolute;background:var(--ink-muted);transition:transform .3s;}
+  .faq-q .plus::before{top:50%;left:0;right:0;height:1.5px;transform:translateY(-50%);}
+  .faq-q .plus::after{left:50%;top:0;bottom:0;width:1.5px;transform:translateX(-50%);}
+  .faq-item.open .plus::after{transform:translateX(-50%) rotate(90deg);opacity:0;}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
+  .faq-a p{padding:0 4px 26px;color:var(--ink-muted);font-size:14.5px;max-width:640px;}
+
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{
+    position:relative;overflow:hidden;
+    background:linear-gradient(160deg,var(--bg-panel-2),var(--bg-deep));
+    border-radius:32px;
+    margin:0 32px;
+    padding:100px 40px;
+    text-align:center;
+  }
+  .cta-final::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(47,107,255,.30), transparent 70%);
+  }
+  .cta-final h2{font-size:clamp(2.2rem,5vw,3.6rem);position:relative;margin-bottom:20px;}
+  .cta-final p{position:relative;color:var(--ink-muted);font-size:17px;max-width:520px;margin:0 auto 44px;}
+  .cta-final .btn-primary{position:relative;padding:22px 48px;font-size:17px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:100px 0 40px;}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:60px;border-bottom:1px solid var(--glass-border);}
+  .footer-brand p{color:var(--ink-muted);font-size:14.5px;margin:18px 0 26px;max-width:280px;}
+  .footer-social{display:flex;gap:12px;}
+  .footer-social a{
+    width:38px;height:38px;border-radius:10px;border:1px solid var(--glass-border);
+    display:flex;align-items:center;justify-content:center;transition:.3s;
+  }
+  .footer-social a:hover{background:var(--blue-electric);border-color:var(--blue-electric);}
+  .footer-col h5{font-family:'IBM Plex Mono';font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-faint);margin-bottom:18px;}
+  .footer-col a,.footer-col p{display:block;font-size:14.5px;color:var(--ink-muted);margin-bottom:12px;transition:color .25s;}
+  .footer-col a:hover{color:var(--ink);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:30px;font-size:13px;color:var(--ink-faint);flex-wrap:wrap;gap:12px;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1024px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:480px;margin:0 auto 20px;}
+    .benefits-grid,.services-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;}
+    .testi-grid{grid-template-columns:1fr;}
+    .process-steps{grid-template-columns:repeat(3,1fr);row-gap:36px;}
+    .process-steps::before{display:none;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:768px){
+    .nav-links{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
+      background:rgba(9,14,32,.98);backdrop-filter:blur(20px);
+      flex-direction:column;justify-content:center;align-items:flex-start;
+      padding:40px;gap:28px;transform:translateX(100%);transition:transform .4s var(--ease);
+      border-left:1px solid var(--glass-border);z-index:60;}
+    .nav-links.open{transform:translateX(0);}
+    .burger{display:block;}
+    .nav-cta .btn-primary{display:none;}
+    .case-card,.case-card:nth-child(even){grid-template-columns:1fr;}
+    .case-card:nth-child(even) .case-media{order:0;}
+    .case-content{padding:34px 26px;}
+    .benefits-grid,.services-grid{grid-template-columns:1fr;}
+    .stats-grid{grid-template-columns:1fr 1fr;}
+    .process-steps{grid-template-columns:1fr 1fr;}
+    .footer-top{grid-template-columns:1fr;gap:36px;}
+    section .wrap{padding-top:80px;}
+    .cta-final{margin:0 16px;padding:70px 24px;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+    <nav>
+      <a href="#inicio" class="logo">
+        <span class="logo-mark">N</span>
+        NEXO DIGITAL
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#cta-final" class="btn btn-primary" style="padding:12px 22px;">Solicitar Cotización</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#cta-final" class="btn btn-primary">Solicitar Cotización</a>
+        <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <canvas id="nexus-canvas"></canvas>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow" data-reveal>Diseño web para negocios y pymes</div>
+        <h1 data-reveal>Sitios web que <em>convierten visitantes</em> en clientes.</h1>
+        <p class="lead" data-reveal>Tu negocio merece una presencia digital que inspire confianza desde el primer segundo. Diseñamos sitios web modernos, rápidos y optimizados para que más personas te encuentren, te contacten y se conviertan en clientes.</p>
+        <div class="hero-ctas" data-reveal>
+          <a href="#cta-final" class="btn btn-primary">Solicitar Cotización</a>
+          <a href="#portafolio" class="btn btn-ghost">Ver Proyectos</a>
+        </div>
+        <div class="hero-meta" data-reveal>
+          <div><strong>3</strong> Proyectos demostrativos</div>
+          <div><strong>100%</strong>Diseño responsive</div>
+          <div><strong>Código</strong> Optimizado</div>
+        </div>
+      </div>
+      <div class="hero-visual" data-reveal>
+        <div class="browser-card">
+          <div class="browser-bar"><span></span><span></span><span></span></div>
+          <div class="browser-body">
+            <div class="fake-chart">
+              <i style="height:40%;animation-delay:.1s"></i>
+              <i style="height:65%;animation-delay:.3s"></i>
+              <i style="height:50%;animation-delay:.2s"></i>
+              <i style="height:85%;animation-delay:.5s"></i>
+              <i style="height:60%;animation-delay:.15s"></i>
+              <i style="height:95%;animation-delay:.4s"></i>
+              <i style="height:70%;animation-delay:.25s"></i>
+            </div>
+            <div class="fake-row"><span>Diseño responsive</span><strong>✔</strong></div>
+
+<div class="fake-row"><span>SEO optimizado</span><strong>✔</strong></div>
+
+<div class="fake-row"><span>Carga rápida</span><strong>✔</strong></div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST / LOGOS ================= -->
+<section class="trust">
+  <div class="wrap">
+    <p class="trust-label">Sitios creados con enfoque en rendimiento, accesibilidad y experiencia de usuario</p>
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>SSL Certificado</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Core Web Vitals</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>Optimizado para Google</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg>Código optimizado</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg>WCAG Accesible</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 18h6"/></svg>Mobile-First</div>
+        <!-- duplicate for seamless loop -->
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>SSL Certificado</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Core Web Vitals</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>Optimizado para Google</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg>Código optimizado</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg>WCAG Accesible</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 18h6"/></svg>Mobile-First</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section id="stats">
+  <div class="wrap">
+    <div class="stats-grid" data-reveal>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Proyectos publicados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Diseño responsive</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">SEO</div>
+        <div class="stat-label">Optimizado</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Contacto directo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENEFITS ================= -->
+<section id="beneficios">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <div class="eyebrow" style="justify-content:center;display:inline-flex;">Por qué Nexo Digital</div>
+      <h2>Cada decisión de diseño está pensada para generar negocio</h2>
+      <p>No construimos páginas bonitas sin propósito. Construimos herramientas de venta.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card" data-reveal>
+        <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Más clientes</h3>
+        <p>Estructuras de conversión pensadas para transformar tráfico en solicitudes reales de cotización.</p>
+      </div>
+      <div class="benefit-card" data-reveal>
+        <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Más confianza</h3>
+        <p>Un diseño premium comunica autoridad antes de que el cliente lea una sola línea de tu oferta.</p>
+      </div>
+      <div class="benefit-card" data-reveal>
+        <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8 12 14.7 8.5 11.2 3 16.7"/></svg></div>
+        <h3>Más ventas</h3>
+        <p>Cada sección está diseñada como parte de un embudo, no como una simple pieza informativa.</p>
+      </div>
+      <div class="benefit-card" data-reveal>
+        <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
+        <h3>Más visibilidad</h3>
+        <p>Optimización técnica y SEO local desde el primer día, no como un servicio adicional.</p>
+      </div>
+      <div class="benefit-card" data-reveal>
+        <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Disponible 24/7</h3>
+        <p>Tu negocio sigue vendiendo mientras duermes, con integración directa a WhatsApp.</p>
+      </div>
+      <div class="benefit-card" data-reveal>
+        <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="2"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></div>
+        <h3>Rendimiento superior</h3>
+        <p>Código limpio y ligero: sitios que cargan rápido en cualquier conexión y dispositivo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICIOS ================= -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Servicios</div>
+      <h2>Soluciones digitales completas, sin depender de terceros</h2>
+      <p>Elige exactamente lo que tu negocio necesita para vender más.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-reveal>
+        <span class="service-num">01</span>
+        <h3>Landing Pages</h3>
+        <p>Páginas de una sola sección enfocadas en un único objetivo: convertir.</p>
+        <div class="service-tags"><span>Alta conversión</span><span>Copywriting</span></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <span class="service-num">02</span>
+        <h3>Sitios Corporativos</h3>
+        <p>Presencia institucional sólida para negocios que necesitan transmitir autoridad.</p>
+        <div class="service-tags"><span>Multi-página</span><span>Escalable</span></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <span class="service-num">03</span>
+        <h3>Tiendas Online</h3>
+        <p>Catálogos y carritos de compra diseñados para vender sin fricción.</p>
+        <div class="service-tags"><span>E-commerce</span><span>Pagos online</span></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <span class="service-num">04</span>
+        <h3>SEO Local</h3>
+        <p>Posicionamiento en Google para que tu negocio aparezca primero en tu zona.</p>
+        <div class="service-tags"><span>Google Maps</span><span>Palabras clave</span></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <span class="service-num">05</span>
+        <h3>Integración WhatsApp</h3>
+        <p>Botones y flujos de contacto directo para cerrar ventas sin fricción.</p>
+        <div class="service-tags"><span>Chat directo</span><span>Automatización</span></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <span class="service-num">06</span>
+        <h3>Optimización Web</h3>
+        <p>Velocidad, accesibilidad y rendimiento técnico auditado y mejorado.</p>
+        <div class="service-tags"><span>Core Web Vitals</span><span>Performance</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTAFOLIO ================= -->
+<section id="portafolio">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <div class="eyebrow" style="justify-content:center;display:inline-flex;">Portafolio</div>
+      <h2>Diseños pensados para negocios reales</h2>
+      <p>Estos proyectos fueron desarrollados como demostraciones de portafolio para mostrar cómo Nexo Digital adapta diseño, experiencia de usuario y estrategia digital a distintos tipos de negocios.</p>
+    </div>
+    <div class="case-list">
+      <article class="case-card case-blade" data-reveal>
+        <div class="case-media">
+          <div class="frame">
+            <div class="frame-bar"><span></span><span></span><span></span></div>
+            <div class="frame-body">
+              <div class="fbar gold"></div>
+              <div class="fbar"></div>
+              <div class="fbar s"></div>
+            </div>
+          </div>
+        </div>
+        <div class="case-content">
+          <span class="case-category">Barbería Premium</span>
+          <h3>The Blade Club</h3>
+          <p>Identidad oscura, elegante y masculina para una barbería que compite en el segmento premium de su ciudad. Reserva de citas y catálogo de servicios integrados en una experiencia inmersiva.</p>
+          <div class="case-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Animaciones</span></div>
+          <a href="https://mattiass-s.github.io/blade-club/" target="_blank" rel="noopener" class="case-link">Ver Proyecto →</a>
+        </div>
+      </article>
+
+      <article class="case-card case-sonrisa" data-reveal>
+        <div class="case-media">
+          <div class="frame">
+            <div class="frame-bar"><span></span><span></span><span></span></div>
+            <div class="frame-body">
+              <div class="fbar gold"></div>
+              <div class="fbar"></div>
+              <div class="fbar s"></div>
+            </div>
+          </div>
+        </div>
+        <div class="case-content">
+          <span class="case-category">Clínica Dental</span>
+          <h3>Sonrisa Integral</h3>
+          <p>Diseño en tonos médicos y azul profesional que transmite confianza clínica. Sistema de agendamiento de citas y presentación de tratamientos orientado a pacientes nuevos.</p>
+          <div class="case-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>UX Médico</span></div>
+          <a href="https://mattiass-s.github.io/sonrisa-integral/" target="_blank" rel="noopener" class="case-link">Ver Proyecto →</a>
+        </div>
+      </article>
+
+      <article class="case-card case-terra" data-reveal>
+        <div class="case-media">
+          <div class="frame">
+            <div class="frame-bar"><span></span><span></span><span></span></div>
+            <div class="frame-body">
+              <div class="fbar gold"></div>
+              <div class="fbar"></div>
+              <div class="fbar s"></div>
+            </div>
+          </div>
+        </div>
+        <div class="case-content">
+          <span class="case-category">Restaurante Premium</span>
+          <h3>Terra Cocina</h3>
+          <p>Paleta negro y dorado para un restaurante de alta cocina. Menú digital, reservas y storytelling de marca diseñados para justificar un ticket promedio elevado.</p>
+          <div class="case-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Branding</span></div>
+          <a href="https://mattiass-s.github.io/terra-cocina/" target="_blank" rel="noopener" class="case-link">Ver Proyecto →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESO ================= -->
+<section id="proceso">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <div class="eyebrow" style="justify-content:center;display:inline-flex;">Cómo trabajamos</div>
+      <h2>Un proceso claro, de principio a fin</h2>
+      <p>Cinco etapas, un solo objetivo: lanzar un sitio que venda desde el primer día.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step" data-reveal>
+        <div class="process-num">01</div>
+        <h4>Descubrimiento</h4>
+        <p>Entendemos tu negocio, tu cliente ideal y tus objetivos de conversión.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-num">02</div>
+        <h4>Diseño UI/UX</h4>
+        <p>Diseñamos cada pantalla priorizando claridad, jerarquía y persuasión.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-num">03</div>
+        <h4>Desarrollo</h4>
+        <p>Construimos el sitio con código limpio, rápido y fácil de mantener.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-num">04</div>
+        <h4>Optimización</h4>
+        <p>Revisamos velocidad, SEO técnico y accesibilidad antes de publicar.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-num">05</div>
+        <h4>Lanzamiento</h4>
+        <p>Publicamos tu sitio y te acompañamos en las primeras semanas activas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE NOSOTROS ================= -->
+<section id="nosotros">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy" data-reveal>
+        <div class="eyebrow">Sobre Nexo Digital</div>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:22px;">Diseño estratégico, no solo diseño bonito</h2>
+        <p>Nexo Digital nace para cerrar la brecha entre negocios que merecen una presencia digital de nivel internacional y agencias que solo entregan plantillas genéricas.</p>
+        <p>Cada proyecto pasa por un proceso de diseño estratégico, desarrollo profesional y optimización técnica real, con atención personalizada de principio a fin.</p>
+      </div>
+      <div class="pillars" data-reveal>
+        <div class="pillar">
+          <h4>Desarrollo profesional</h4>
+          <p>Código propio, sin plantillas prefabricadas ni atajos que comprometan el resultado.</p>
+        </div>
+        <div class="pillar">
+          <h4>Diseño estratégico</h4>
+          <p>Cada elemento visual responde a un objetivo de negocio concreto.</p>
+        </div>
+        <div class="pillar">
+          <h4>Enfoque en resultados</h4>
+          <p>Medimos éxito en conversiones y solicitudes de contacto, no en likes.</p>
+        </div>
+        <div class="pillar">
+          <h4>Atención personalizada</h4>
+          <p>Trabajamos con un número limitado de clientes a la vez para cuidar cada detalle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIOS ================= -->
+<section id="enfoque">
+  <div class="wrap">
+
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;display:inline-flex;">
+        Nuestra forma de trabajar
+      </div>
+
+      <h2>Lo que encontrarás en cada proyecto</h2>
+
+      <p>
+        Independientemente del rubro, cada sitio desarrollado por
+        Nexo Digital sigue los mismos principios de calidad,
+        rendimiento y experiencia de usuario.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-icon">✅</div>
+        <h3>Diseño personalizado</h3>
+        <p>Cada proyecto se adapta a la identidad y objetivos del negocio.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">📱</div>
+        <h3>Optimización móvil</h3>
+        <p>Experiencia perfecta en celulares, tablets y computadores.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h3>Alto rendimiento</h3>
+        <p>Sitios rápidos y optimizados para una navegación fluida.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">💬</div>
+        <h3>Integración WhatsApp</h3>
+        <p>Facilita el contacto directo con tus clientes.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <h3>Enfoque en conversión</h3>
+        <p>Diseñados para generar consultas y oportunidades de negocio.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🔧</div>
+        <h3>Soporte cercano</h3>
+        <p>Comunicación directa durante todo el proyecto.</p>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;margin-top:40px;color:var(--ink-faint);font-size:14px;">
+      *Los proyectos mostrados corresponden a demostraciones desarrolladas con fines de portafolio.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <div class="eyebrow" style="justify-content:center;display:inline-flex;">Preguntas frecuentes</div>
+      <h2>Todo lo que necesitas saber antes de empezar</h2>
+    </div>
+    <div class="faq-list" data-reveal>
+      <div class="faq-item">
+        <button class="faq-q">¿Cuánto tiempo toma desarrollar un sitio?<span class="plus"></span></button>
+        <div class="faq-a"><p>El tiempo promedio de entrega es de 14 días, dependiendo de la cantidad de secciones y funcionalidades del proyecto.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Qué incluye la cotización inicial?<span class="plus"></span></button>
+        <div class="faq-a"><p>Incluye diseño UI/UX, desarrollo completo, optimización de velocidad, SEO básico e integración con WhatsApp.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Ofrecen mantenimiento después del lanzamiento?<span class="plus"></span></button>
+        <div class="faq-a"><p>Sí. Ofrecemos planes de mantenimiento y soporte continuo para mantener tu sitio actualizado y funcionando.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Puedo pedir cambios después de la entrega?<span class="plus"></span></button>
+        <div class="faq-a"><p>Sí. Cada proyecto incluye una ronda de ajustes posterior al lanzamiento sin costo adicional.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Trabajan con negocios fuera de mi ciudad?<span class="plus"></span></button>
+        <div class="faq-a"><p>Sí, todo nuestro proceso se realiza de forma remota mediante llamadas y mensajería directa.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section id="cta-final">
+  <div class="cta-final" data-reveal>
+    <h2>Tu negocio merece algo mejor que una página web.</h2>
+    <p>Agenda una llamada de descubrimiento sin costo y recibe una propuesta a la medida de tu negocio.</p>
+    <a href="https://wa.me/56999705027" target="_blank" rel="noopener" class="btn btn-primary">Solicitar Cotización</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo"><span class="logo-mark">N</span>NEXO DIGITAL</a>
+        <p>Diseño y desarrollo web para negocios, emprendedores y pymes que buscan una presencia digital moderna, profesional y efectiva.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/56999705027" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="nexodigital.webb@gmail.com" aria-label="Correo"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <a href="#servicios">Landing Pages</a>
+        <a href="#servicios">Sitios Corporativos</a>
+        <a href="#servicios">Tiendas Online</a>
+        <a href="#servicios">SEO Local</a>
+      </div>
+      <div class="footer-col">
+        <h5>Portafolio</h5>
+        <a href="https://mattiass-s.github.io/blade-club/" target="_blank" rel="noopener">The Blade Club</a>
+        <a href="https://mattiass-s.github.io/sonrisa-integral/" target="_blank" rel="noopener">Sonrisa Integral</a>
+        <a href="https://mattiass-s.github.io/terra-cocina/" target="_blank" rel="noopener">Terra Cocina</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <p>nexodigital.webb@gmail.com</p>
+        <p>+56 9 9970 5027</p>
+        <p>Santiago, Chile</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nexo Digital. Todos los derechos reservados.</span>
+      <span>Diseñado y desarrollado por Nexo Digital.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Header scroll state */
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, {passive:true});
+
+  /* Mobile nav */
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+
+  /* Reveal on scroll */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.15, rootMargin:'0px 0px -60px 0px'});
+  revealEls.forEach(el => io.observe(el));
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(other => {
+        if(other !== item){
+          other.classList.remove('open');
+          other.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        a.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* Nexus network canvas — signature element representing connection/"nexo" */
+  const canvas = document.getElementById('nexus-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, nodes = [];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize(){
+    const rect = canvas.parentElement.getBoundingClientRect();
+    w = canvas.width = rect.width;
+    h = canvas.height = rect.height;
+    const count = Math.max(24, Math.min(60, Math.floor((w*h)/28000)));
+    nodes = Array.from({length:count}, () => ({
+      x: Math.random()*w,
+      y: Math.random()*h,
+      vx: (Math.random()-0.5)*0.35,
+      vy: (Math.random()-0.5)*0.35
+    }));
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let mouse = {x:-9999,y:-9999};
+  canvas.parentElement.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.parentElement.addEventListener('mouseleave', () => { mouse.x=-9999; mouse.y=-9999; });
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if(n.x < 0 || n.x > w) n.vx *= -1;
+      if(n.y < 0 || n.y > h) n.vy *= -1;
+    });
+
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 150){
+          ctx.strokeStyle = `rgba(92,168,255,${0.16 * (1 - dist/150)})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+      const dxm = nodes[i].x - mouse.x;
+      const dym = nodes[i].y - mouse.y;
+      const distm = Math.sqrt(dxm*dxm + dym*dym);
+      if(distm < 180){
+        ctx.strokeStyle = `rgba(110,231,249,${0.3 * (1 - distm/180)})`;
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.stroke();
+      }
+    }
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 1.8, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(180,210,255,0.55)';
+      ctx.fill();
+    });
+
+    if(!reduceMotion) requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
